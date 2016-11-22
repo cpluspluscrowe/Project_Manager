@@ -1,0 +1,39 @@
+﻿<Window x:Class="Project_Manager.Info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Info" Height="300" Width="300" Top="0" Left="0"
+        Closed="Info_OnClosed">
+    <Grid Name="InfoMainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition MaxHeight="30" Height="*" />
+            <RowDefinition  MaxHeight="30" Height="*" />
+        </Grid.RowDefinitions>
+        <Button Content="Save" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0" Click="SaveProjectDetails" />
+        <Button Content="Back" Grid.Row="7" Grid.ColumnSpan="2" Click="Button_Click" />
+        <RichTextBox PreviewMouseDown="ProjectTitleMd" Name="ProjectEditTitle"  Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Project Title..."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox PreviewMouseDown="ProjectNumberMd"  Name="ProjectEditNumber" Grid.Row ="3"  Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Project Number..."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+
+</Window>

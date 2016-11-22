@@ -1,0 +1,33 @@
+﻿<Window x:Class="Project_Manager.EditTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Task" Height="300" Width="300">
+    <Grid Name ="MainSaveProjectGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition  MaxHeight="30" Height="*" />
+            <RowDefinition  MaxHeight="30" Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Content="Save" HorizontalAlignment="Stretch" Grid.Row ="2" Click="Save_Click"/>
+        <Button Content="Back" HorizontalAlignment="Stretch" Grid.Row ="3" Click="BackButton"/>
+        <RichTextBox  PreviewMouseDown="PTitleMd" Name="TaskEditTitle" Grid.Column="1" HorizontalAlignment="Left" Grid.Row ="0">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Task Title"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <RichTextBox  PreviewMouseDown="PNumberMd"  Name="TaskEditDescription" Grid.Column="1" HorizontalAlignment="Left" Grid.Row ="1">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Task Description"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Window>

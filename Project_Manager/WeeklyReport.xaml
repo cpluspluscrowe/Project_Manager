@@ -1,0 +1,27 @@
+﻿<Window x:Class="Project_Manager.WeeklyReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Weekly Report" Height="300" Width="300" Left="0" Top="0">
+    <Grid Name="MainWRGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="167" Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition MaxHeight="30" Height="*" />
+        </Grid.RowDefinitions>
+        <Button Content="Back" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" Grid.Row ="7" Click="Button_Click"/>
+        <RichTextBox Name="WeeklyReportTextbox"  HorizontalAlignment="Left" Grid.Row ="1" Grid.RowSpan="7" Grid.Column ="0"  TextChanged="RichTextBox_TextChanged">
+            <FlowDocument>
+                <Paragraph/>
+            </FlowDocument>
+        </RichTextBox>
+        <Calendar Name="ReportDates" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" SelectionMode="SingleRange" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

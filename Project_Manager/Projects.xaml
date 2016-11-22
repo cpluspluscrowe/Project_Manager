@@ -1,0 +1,58 @@
+﻿<Window x:Class="Project_Manager.Projects"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="{Binding Path = getProjectName}" Height="400" Width="450" Left="0" Top="0"
+        AllowDrop="True"
+        Closed="Projects_OnClosed"
+        >
+    <Grid Name="MainProjectGrid" AllowDrop="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="132*" MinHeight="20"/>
+            <RowDefinition  MaxHeight="30" Height="30"  MinHeight="20"/>
+            <RowDefinition  MaxHeight="30" Height="19*" MinHeight="20" />
+            <RowDefinition  MaxHeight="30" Height="19*" MinHeight="20"/>
+            <RowDefinition  MaxHeight="30" Height="19*" MinHeight="15"/>
+            <RowDefinition  MaxHeight="30" Height="19*" MinHeight="15"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="0" AllowDrop="True">
+            <Grid Name="ProjectNotes" Grid.Row ="0" Grid.RowSpan ="1"  Grid.Column ="0" Grid.ColumnSpan="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <!--nothing here!-->
+                </Grid.RowDefinitions>
+            </Grid>
+        </ScrollViewer>
+        <Button Name="AddNote" Content="Add Note" Grid.Column ="0"  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="1" Click="AddNoteClick"/>
+        <Button Name="AddLog" Content="Logs" Grid.Column ="0"  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="2" Click="LogNavigate"/>
+        <Button Name="AddWr" Content="Weekly Report"  Grid.Column ="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="2" Click="WeeklyReportNavigate"/>
+        <Button Name="AddTask" Content="Task Manager" Grid.Column ="4" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="1" Click="TaskNavigate"/>
+        <Button Name="ArchiveProject" Content="Archive Project" Grid.Column ="0"  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="3" Click="ArchiveButtonClick"/>
+        <Button Name="InfoProject" Content="Edit Project Details" Grid.Column ="4"  Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Grid.Row ="3" Click="InfoButtonClick"/>
+        <Button Name="Files" Content="Files" Grid.ColumnSpan="8"  Grid.Column ="0" HorizontalAlignment="Stretch" Grid.Row ="4" Click="Files_Click"/>
+        <Button Name="BackButton" Content="Back" Grid.ColumnSpan="8"  Grid.Column ="0" HorizontalAlignment="Stretch" Grid.Row ="5" Click="Button_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="4" Grid.Column="8" HorizontalAlignment="Left" Grid.RowSpan="4" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>

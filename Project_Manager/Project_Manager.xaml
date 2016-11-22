@@ -1,0 +1,47 @@
+﻿<Window x:Class="Project_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="Project Manager"
+        xmlns:p="clr-namespace:Project_Manager.Properties"
+        Height="{Binding Source={x:Static p:Settings.Default}, Path=Height, Mode=TwoWay}"
+        Width="{Binding Source={x:Static p:Settings.Default}, Path=Width, Mode=TwoWay}"
+        Left="{Binding Source={x:Static p:Settings.Default}, Path=Left, Mode=TwoWay}"
+        Top="{Binding Source={x:Static p:Settings.Default}, Path=Top, Mode=TwoWay}"
+        Closed="MainWindow_OnClosed"
+        >
+
+    <Grid Name="MainWindowGrid">
+        <Grid.Background>
+            <SolidColorBrush  Color="Bisque"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition  MaxHeight="30" Height="*" />
+            <RowDefinition  MaxHeight="30" Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox PreviewMouseDown="UcTextBox_PreviewMouseDown" Name="SearchTextBox" Grid.Column ="0"  Grid.ColumnSpan="8" Grid.Row="0" Text="Project Search..." TextChanged="TextBox_TextChanged"  >
+            
+        </TextBox>
+
+        <ScrollViewer Grid.Row ="1">
+    <Grid Name="Projects_Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*" />
+            </Grid.RowDefinitions>
+                <Label  Name ="PM_ProjectLabel" Content="Available Projects"></Label>
+
+            </Grid>
+    </ScrollViewer>
+        
+        <Button Grid.Row="2"  Content ="Add Project" Click="Button_Click"></Button>
+        <Button Background="GhostWhite" Name="ArchiveSwitch" Grid.Row="3"  Content ="Archive" Click="NavigateToArchivedProjects"></Button>
+    </Grid>
+</Window>
